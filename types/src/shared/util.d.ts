@@ -364,6 +364,7 @@ export namespace OPS {
     const constructPath: number;
     const boundingBoxes: number;
     const operationPosition: number;
+    const annotBBoxesAndOpPos: number;
 }
 export namespace PageActionEventType {
     export const O: string;
