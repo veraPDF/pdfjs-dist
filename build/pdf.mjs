@@ -14449,12 +14449,13 @@ class PDFPageProxy {
     });
   }
   getAnnotations({
-    intent = "display"
+    intent = "display",
+    noSorting = false
   } = {}) {
     const {
       renderingIntent
     } = this._transport.getRenderingIntent(intent);
-    return this._transport.getAnnotations(this._pageIndex, renderingIntent);
+    return this._transport.getAnnotations(this._pageIndex, renderingIntent, noSorting);
   }
   getJSActions() {
     return this._transport.getPageJSActions(this._pageIndex);
@@ -15473,10 +15474,11 @@ class WorkerTransport {
       gen: ref.gen
     });
   }
-  getAnnotations(pageIndex, intent) {
+  getAnnotations(pageIndex, intent, noSorting) {
     return this.messageHandler.sendWithPromise("GetAnnotations", {
       pageIndex,
-      intent
+      intent,
+      noSorting
     });
   }
   getFieldObjects() {

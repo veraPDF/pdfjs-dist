@@ -408,6 +408,11 @@ export type GetAnnotationsParameters = {
      * or 'any' (all annotations). The default value is 'display'.
      */
     intent?: string | undefined;
+    /**
+     * - Returns annotations in the order they are
+     * declared in the document.
+     */
+    noSorting: boolean;
 };
 /**
  * Page render parameters.
@@ -1231,6 +1236,8 @@ export class PDFDocumentProxy {
  * @property {string} [intent] - Determines the annotations that are fetched,
  *   can be 'display' (viewable annotations), 'print' (printable annotations),
  *   or 'any' (all annotations). The default value is 'display'.
+ * @property {boolean} noSorting - Returns annotations in the order they are
+ *   declared in the document.
  */
 /**
  * Page render parameters.
@@ -1387,7 +1394,7 @@ export class PDFPageProxy {
      * @returns {Promise<Array<any>>} A promise that is resolved with an
      *   {Array} of the annotation objects.
      */
-    getAnnotations({ intent }?: GetAnnotationsParameters): Promise<Array<any>>;
+    getAnnotations({ intent, noSorting }?: GetAnnotationsParameters): Promise<Array<any>>;
     /**
      * @returns {Promise<Object>} A promise that is resolved with an
      *   {Object} with JS actions.
