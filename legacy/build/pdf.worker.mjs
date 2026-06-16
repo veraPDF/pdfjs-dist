@@ -46221,6 +46221,13 @@ class ExtendedCatalog extends Catalog {
     }
     return shadow(this, "structTreeRootObject", structTreeRoot);
   }
+  convertString(str, type) {
+    try {
+      return stringToUTF8String(str);
+    } catch (e) {
+      return stringToPDFString(str);
+    }
+  }
   getTreeElement(el, page, ref) {
     try {
       if (el instanceof Dict && el.has("Pg")) {
@@ -46235,8 +46242,8 @@ class ExtendedCatalog extends Catalog {
         const name = el.has("S") ? el.get("S").name : null;
         const roleName = this.getRoleName(el, name);
         const treeElement = {
-          name: name ? stringToPDFString(name) : null,
-          roleName: roleName ? stringToPDFString(roleName) : null,
+          name: name ? this.convertString(name, "Name") : null,
+          roleName: roleName ? this.convertString(roleName, "Role name") : null,
           children: this.getTreeElement(el.get("K"), page, el.getRaw("K")),
           pageIndex: page,
           ref: ref instanceof Ref ? ref : null
@@ -46246,7 +46253,7 @@ class ExtendedCatalog extends Catalog {
           alt = el.has("ActualText") ? el.get("ActualText") : null;
         }
         if (typeof alt === "string") {
-          treeElement.alt = stringToPDFString(alt);
+          treeElement.alt = this.convertString(alt, "Alt");
         }
         return treeElement;
       }
@@ -46309,8 +46316,8 @@ class ExtendedCatalog extends Catalog {
         const name = el.get("S").name;
         const roleName = this.getRoleName(el, name);
         const treeElement = {
-          name: name ? stringToPDFString(name) : null,
-          roleName: roleName ? stringToPDFString(roleName) : null,
+          name: name ? this.convertString(name, "Name") : null,
+          roleName: roleName ? this.convertString(roleName, "Role name") : null,
           children: [],
           pageIndex: page,
           ref: ref instanceof Ref ? ref : null
@@ -46320,7 +46327,7 @@ class ExtendedCatalog extends Catalog {
           alt = el.has("ActualText") ? el.get("ActualText") : null;
         }
         if (typeof alt === "string") {
-          treeElement.alt = stringToPDFString(alt);
+          treeElement.alt = this.convertString(alt, "Alt");
         }
         return treeElement;
       }

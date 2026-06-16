@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f31d007b-4557-449b-8c48-64bc5c088f6a" name="Changes" comment="" />
+    <list default="true" id="f31d007b-4557-449b-8c48-64bc5c088f6a" name="Changes" comment="Customized PDF.js version 5.4.296 - https://github.com/veraPDF/pdf.js/tree/v5.4.296-taggedPdf-0.1.27">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/pdf.worker.min.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/build/pdf.worker.min.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/pdf.worker.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/build/pdf.worker.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/pdf.worker.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/pdf.worker.mjs.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legacy/build/pdf.worker.min.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/build/pdf.worker.min.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legacy/build/pdf.worker.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/build/pdf.worker.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legacy/build/pdf.worker.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/build/pdf.worker.mjs.map" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -16,10 +27,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2RmkN8RBNGNQFscFgPNzYDEpuVs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,6 +39,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;customizations-for-tagged-pdf&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/Projects/verapdf-js-viewer&quot;,
@@ -36,14 +49,15 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1.6\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.28774.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.28774.11" />
       </set>
     </attachedChunks>
   </component>
@@ -56,6 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1687862600328</updated>
       <workItem from="1687862601620" duration="6108000" />
+      <workItem from="1780921770502" duration="595000" />
+      <workItem from="1781616106439" duration="1091000" />
     </task>
     <task id="LOCAL-00001" summary="Customized PDF.js version 2.14.305 - https://github.com/veraPDF/pdf.js/tree/v2.14.305-taggedPdf-0.1.11">
       <created>1687867765605</created>
@@ -64,7 +80,31 @@
       <option name="project" value="LOCAL" />
       <updated>1687867765605</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Customized PDF.js version 5.4.296 - https://github.com/veraPDF/pdf.js/tree/v5.4.296-taggedPdf-0.1.27">
+      <option name="closed" value="true" />
+      <created>1780489361291</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780489361291</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Customized PDF.js version 5.4.296 - https://github.com/veraPDF/pdf.js/tree/v5.4.296-taggedPdf-0.1.27">
+      <option name="closed" value="true" />
+      <created>1780489485508</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780489485508</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Customized PDF.js version 5.4.296 - https://github.com/veraPDF/pdf.js/tree/v5.4.296-taggedPdf-0.1.27">
+      <option name="closed" value="true" />
+      <created>1780489673935</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780489673935</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,6 +112,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Customized PDF.js version 2.14.305 - https://github.com/veraPDF/pdf.js/tree/v2.14.305-taggedPdf-0.1.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="Customized PDF.js version 2.14.305 - https://github.com/veraPDF/pdf.js/tree/v2.14.305-taggedPdf-0.1.11" />
+    <MESSAGE value="Customized PDF.js version 5.4.296 - https://github.com/veraPDF/pdf.js/tree/v5.4.296-taggedPdf-0.1.27" />
+    <option name="LAST_COMMIT_MESSAGE" value="Customized PDF.js version 5.4.296 - https://github.com/veraPDF/pdf.js/tree/v5.4.296-taggedPdf-0.1.27" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
