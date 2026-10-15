@@ -46437,6 +46437,7 @@ class ExtendedCatalog extends Catalog {
     let actualFont = fontObj;
     let cidFontType = null;
     let normalizedSubtype = null;
+    let descendantRef = null;
     let baseFont = null;
     let cidBaseFont = null;
     let encoding = null;
@@ -46450,6 +46451,7 @@ class ExtendedCatalog extends Catalog {
         const descendantFonts = fontObj.get("DescendantFonts");
         if (Array.isArray(descendantFonts) && descendantFonts.length > 0) {
           const cidFont = this.xref.fetchIfRef(descendantFonts[0]);
+          descendantRef = descendantFonts[0];
           if (cidFont instanceof Dict) {
             actualFont = cidFont;
             cidBaseFont = this.getFieldValueStr(cidFont, "BaseFont");
@@ -46492,6 +46494,7 @@ class ExtendedCatalog extends Catalog {
       return {
         cidFontType,
         normalizedSubtype,
+        descendantRef,
         baseFont,
         cidBaseFont,
         encoding,
@@ -46504,6 +46507,7 @@ class ExtendedCatalog extends Catalog {
       return {
         cidFontType: null,
         normalizedSubtype: null,
+        descendantRef: null,
         baseFont: null,
         cidBaseFont: null,
         encoding: null,
@@ -46547,6 +46551,7 @@ class ExtendedCatalog extends Catalog {
             const {
               cidFontType,
               normalizedSubtype,
+              descendantRef,
               baseFont,
               encoding,
               isComposite,
@@ -46557,8 +46562,11 @@ class ExtendedCatalog extends Catalog {
             const fontIdentity = [baseFont, cidBaseFont, cidFontType, encoding].join(":");
             if (seenFonts.has(fontIdentity)) {
               const existing = seenFonts.get(fontIdentity);
-              if (!existing.refs.some(r => r && fontRef && r.num === fontRef.num && r.gen === fontRef.gen)) {
+              if (!fontRef || !existing.refs.some(r => r && r.num === fontRef.num && r.gen === fontRef.gen)) {
                 existing.refs.push(fontRef);
+              }
+              if (descendantRef && !existing.descendantRefs.some(r => r.num === descendantRef.num && r.gen === descendantRef.gen)) {
+                existing.descendantRefs.push(descendantRef);
               }
               existing.names[pageIndex] = fontName;
               continue;
@@ -46568,6 +46576,7 @@ class ExtendedCatalog extends Catalog {
                 [pageIndex]: fontName
               },
               refs: [fontRef instanceof Ref ? fontRef : null],
+              descendantRefs: descendantRef instanceof Ref ? [descendantRef] : [],
               type: isComposite ? "Type0" : normalizedSubtype,
               subtype: normalizedSubtype,
               cidFontType,
