@@ -5597,7 +5597,8 @@ const OPS = {
   rawFillPath: 94,
   boundingBoxes: 100,
   operationPosition: 101,
-  annotBBoxesAndOpPos: 102
+  annotBBoxesAndOpPos: 102,
+  operandName: 103
 };
 const DrawOPS = {
   moveTo: 0,

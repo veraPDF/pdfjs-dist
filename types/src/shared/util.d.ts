@@ -305,6 +305,7 @@ export namespace OPS {
     export let boundingBoxes: number;
     export let operationPosition: number;
     export let annotBBoxesAndOpPos: number;
+    export let operandName: number;
 }
 export namespace PageActionEventType {
     export let O: string;
