@@ -34,6 +34,7 @@ export type AnnotationEditorParameters = {
  */
 export class AnnotationEditor {
     static _l10n: null;
+    static _l10nAlert: null;
     static _l10nResizer: null;
     static _borderLineWidth: number;
     static _colorManager: ColorManager;
@@ -111,6 +112,7 @@ export class AnnotationEditor {
     _structTreeParentId: any;
     creationDate: any;
     modificationDate: any;
+    canAddComment: boolean;
     rotation: number;
     pageRotation: number;
     pageDimensions: any[];
@@ -119,6 +121,7 @@ export class AnnotationEditor {
     y: number;
     isAttachedToDOM: boolean;
     deleted: boolean;
+    updatePageIndex(newPageIndex: any): void;
     get editorType(): any;
     get mode(): any;
     /**
@@ -287,26 +290,26 @@ export class AnnotationEditor {
     hasAltText(): boolean;
     hasAltTextData(): any;
     focusCommentButton(): void;
-    addCommentButton(): Comment;
+    addCommentButton(): Comment | null;
     addStandaloneCommentButton(): void;
     removeStandaloneCommentButton(): void;
     hideStandaloneCommentButton(): void;
-    set comment(text: {
-        text: any;
-        richText: any;
-        date: any;
-        deleted: any;
+    set comment(value: {
+        text: never;
+        richText: never;
+        date: never;
+        deleted: never;
         color: any;
         opacity: any;
-    });
+    } | null);
     get comment(): {
-        text: any;
-        richText: any;
-        date: any;
-        deleted: any;
+        text: never;
+        richText: never;
+        date: never;
+        deleted: never;
         color: any;
         opacity: any;
-    };
+    } | null;
     setCommentData({ comment, popupRef, richText }: {
         comment: any;
         popupRef: any;
@@ -460,7 +463,10 @@ export class AnnotationEditor {
      * Add the resizers to this editor.
      */
     makeResizable(): void;
-    get toolbarPosition(): null;
+    /**
+     * @returns {Array<number>|null}
+     */
+    get toolbarPosition(): Array<number> | null;
     /**
      * Get the position of the comment button.
      * @returns {Array<number>|null}
@@ -490,6 +496,7 @@ export class AnnotationEditor {
      * Unselect this editor.
      */
     unselect(): void;
+    hideCommentPopup(): void;
     /**
      * Update some parameters which have been changed through the UI.
      * @param {number} type
